@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogVista - Your Personal Blogging Space</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="logo">BlogVista</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#posts"><i class="fas fa-pen-fancy"></i> My Posts</a></li>
+                    <li><a href="#new-post"><i class="fas fa-plus-circle"></i> New Post</a></li>
+                    <li><a href="#profile"><i class="fas fa-user-cog"></i> Profile</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="user-badge">
+                    <span class="username">Admin User</span>
+                    <span class="role-badge">Admin</span>
+                </div>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-area">
+        <section id="dashboard" class="dashboard-section">
+            <h2>Dashboard Overview</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">Published Posts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Drafts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1.2k</div>
+                    <div class="stat-label">Total Views</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">85</div>
+                    <div class="stat-label">Comments</div>
+                </div>
+            </div>
+            
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p>You edited "Getting Started with Web Development"</p>
+                            <small>2 hours ago</small>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p>Paritosh commented on "Design Patterns Explained"</p>
+                            <small>Yesterday</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="posts" class="posts-section hidden">
+            <div class="section-header">
+                <h2>My Blog Posts</h2>
+                <button class="btn btn-primary new-post-btn">
+                    <i class="fas fa-plus"></i> New Post
+                </button>
+            </div>
+            
+            <div class="posts-filter">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Published</button>
+                <button class="filter-btn">Drafts</button>
+                <button class="filter-btn">Featured</button>
+            </div>
+            
+            <div class="posts-list">
+                <div class="post-card">
+                    <div class="post-image">
+                        <img src="https://via.placeholder.com/350x200" alt="Post thumbnail">
+                        <div class="post-status published">Published</div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">Understanding JavaScript Closures</h3>
+                        <p class="post-excerpt">Learn how closures work in JavaScript and how to use them effectively in your applications...</p>
+                        <div class="post-meta">
+                            <span class="post-date"><i class="fas fa-calendar-alt"></i> Jun 15, 2023</span>
+                            <span class="post-views"><i class="fas fa-eye"></i> 245</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="post-card">
+                    <div class="post-image">
+                        <img src="https://via.placeholder.com/350x200" alt="Post thumbnail">
+                        <div class="post-status draft">Draft</div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">CSS Grid: A Complete Guide</h3>
+                        <p class="post-excerpt">Master CSS Grid layout with this comprehensive guide covering all properties and use cases...</p>
+                        <div class="post-meta">
+                            <span class="post-date"><i class="fas fa-calendar-alt"></i> May 22, 2023</span>
+                            <span class="post-views"><i class="fas fa-eye"></i> 87</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="action-btn delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="new-post" class="new-post-section hidden">
+            <h2>Create New Post</h2>
+            <form class="post-form">
+                <div class="form-group">
+                    <label for="post-title">Post Title</label>
+                    <input type="text" id="post-title" placeholder="Enter post title">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="post-category">Category</label>
+                        <select id="post-category">
+                            <option>Technology</option>
+                            <option>Design</option>
+                            <option>Business</option>
+                            <option>Personal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="post-tags">Tags</label>
+                        <input type="text" id="post-tags" placeholder="Add tags, separated by commas">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="post-content">Content</label>
+                    <div class="editor-toolbar">
+                        <button type="button" class="editor-btn"><i class="fas fa-bold"></i></button>
+                        <button type="button" class="editor-btn"><i class="fas fa-italic"></i></button>
+                        <button type="button" class="editor-btn"><i class="fas fa-underline"></i></button>
+                        <button type="button" class="editor-btn"><i class="fas fa-list-ul"></i></button>
+                        <button type="button" class="editor-btn"><i class="fas fa-list-ol"></i></button>
+                        <button type="button" class="editor-btn"><i class="fas fa-link"></i></button>
+                        <button type="button" class="editor-btn"><i class="fas fa-image"></i></button>
+                        <button type="button" class="editor-btn"><i class="fas fa-code"></i></button>
+                    </div>
+                    <textarea id="post-content" rows="15" placeholder="Write your post content here..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="post-image">Featured Image</label>
+                    <div class="image-upload">
+                        <input type="file" id="post-image" accept="image/*">
+                        <label for="post-image" class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i> Choose Image
+                        </label>
+                        <span class="file-name">No file chosen</span>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary">Save Draft</button>
+                    <button type="submit" class="btn btn-primary">Publish Post</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="profile" class="profile-section hidden">
+            <h2>Account Settings</h2>
+            
+            <div class="profile-tabs">
+                <button class="tab-btn active">Profile</button>
+                <button class="tab-btn">Security</button>
+                <button class="tab-btn">Preferences</button>
+            </div>
+            
+            <div class="profile-content">
+                <div class="avatar-section">
+                    <div class="avatar-preview">
+                        <img src="https://via.placeholder.com/150" alt="Profile picture">
+                    </div>
+                    <button class="btn btn-secondary change-avatar-btn">Change Photo</button>
+                </div>
+                
+                <form class="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" value="Admin">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" value="User">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" value="admin_user">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="admin@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" rows="4">Experienced web developer and technical writer passionate about sharing knowledge.</textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 BlogVista. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
